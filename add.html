@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>calcule</title>
+<style type="text/css">
+body{background-color:#000000;}
+h1{color:#FF0054;
+text-shadow:2px 2px 2px #00FBFF;}
+fieldset{
+background-color:#000000;
+height:500px;
+width:300px;
+margin:0;
+color:#00FBFF;
+border-color:#00FBFF;
+border-radius:10px;
+}
+input{
+text-align:center;
+margin:0;
+}
+input#s{
+text-align:center;
+background-color:#FFFFFF;}
+input#c{
+margin-left:250px;
+color:red;}
+#key{
+background-color:black;
+text-align:center;
+width:300px;
+height:300px;
+}
+button{
+background-color:black;
+width:50px;
+height:50px;
+color:#00FBFF;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+function calcule()
+{
+var x=document.getElementById("n1").value;
+var y=document.getElementById("n2").value;
+x=Number(x);
+y=Number(y);
+op=document.getElementsByName("op");
+if (op[0].checked){document.getElementById("s").value=(x+y);};
+if (op[1].checked){document.getElementById("s").value=(x-y);};
+if (op[2].checked){document.getElementById("s").value=(x*y);};
+if (op[3].checked){document.getElementById("s").value=(x/y);};
+}
+function add(x)
+{
+n=document.getElementsByName("n");
+if (n[0].checked)
+{m=document.getElementById("n1").value;
+m=m+x;
+document.getElementById("n1").value=m;}
+if (n[1].checked)
+{s=document.getElementById("n2").value;
+s=s+x;
+document.getElementById("n2").value=s;}
+}
+</script>
+<center>
+<h1> Calcule </h1>
+<br>
+<fieldset>
+<br>
+<input type="text" id="s" placeholder="0" size=21 disabled><br>
+<input type="radio" name="n"><input type="text" id="n1" size=8><input type="radio" name="n"><input type="text" id="n2" size=8><br>
+<br>
+<input type="radio" name="op" value="+">+
+<input type="radio" name="op" value="-">-
+<input type="radio" name="op" value="*">×
+<input type="radio" name="op" value="/">/<br>
+<br>
+<br>
+<br>
+<div id="key">
+<pre>
+<button onclick="add('1')">1</button> <button onclick="add('2')">2</button> <button value="3" onclick="add('3')">3</button>
+
+<button onclick="add('4')">4</button> <button onclick="add('5')">5</button> <button value="6" onclick="add('6')">6</button>
+
+<button onclick="add('7')">7</button> <button onclick="add('8')">8</button> <button onclick="add('9')">9</button>
+
+<button onclick="add('0')">0</button> <button onclick="add('.')">.</button> <button onClick="calcule()">=</button>
+</pre>
+</div>
+</fieldset>
+<br>
+</body>
+</html>
